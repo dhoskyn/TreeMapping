@@ -1,0 +1,30 @@
+{
+    "type": "geojson",
+    "data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "description": "Not Center"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-105.035724, 39.738742]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "description":"Center"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-105.039429, 39.738774]
+                }
+            }
+        ]
+        }
+    }
+
+
