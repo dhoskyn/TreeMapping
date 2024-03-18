@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
+<html>
 <head>
 <meta charset="utf-8">
 <title>Tree Plotting App</title>
@@ -46,25 +47,29 @@ body { margin: 0; padding: 0; }
         });
 
         map.on('load', () => {
+            // fetch('https://dhoskyn.github.io/TreeMapping/trees.json')
+            //     .then(response => response.json())
+            //     .then(data => {
 
-            fetch('https://dhoskyn.github.io/TreeMapping/docs/trees.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Get the container for displaying tree descriptions
-                    const descriptionsContainer = document.getElementById('tree-descriptions');
+            //         console.log("anything")
+            //         // Get the container for displaying tree descriptions
+            //         const descriptionsContainer = document.getElementById('tree-descriptions');
                     
-                    // Iterate over each feature in the GeoJSON data
-                    data.features.forEach(feature => {
-                        // Create a new paragraph element for each description
-                        const p = document.createElement('p');
-                        p.textContent = feature.properties.description; // Assuming each feature has a 'description' property
+            //         // Iterate over each feature in the GeoJSON data
+            //         data.features.forEach(feature => {
+            //             // Create a new paragraph element for each description
+            //             const p = document.createElement('p');
+            //             p.textContent = feature.properties.description; // Assuming each feature has a 'description' property
                         
-                        // Append the paragraph to the descriptions container
-                        descriptionsContainer.appendChild(p);
-                    });
-            })
-            .catch(error => console.error('Error fetching trees.json:', error));
-            // map.addSource('trees', "https://dhoskyn.github.io/TreeMapping/docs/trees.json");
+            //             // Append the paragraph to the descriptions container
+            //             descriptionsContainer.appendChild(p);
+            //         });
+            // })
+            // .catch(error => console.error('Error fetching trees.json:', error));
+            map.addSource('trees', {
+                type:'geojson',
+                data:"https://dhoskyn.github.io/TreeMapping/trees.json"
+            });
 
             map.addSource('WCAN',{
                 "type": "geojson",
