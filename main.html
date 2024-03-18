@@ -38,7 +38,7 @@ body { margin: 0; padding: 0; }
         });
 
         map.on('load', () => {
-            map.addSource('trees', "trees.json");
+            map.addSource('trees', "https://dhoskyn.github.io/TreeMapping/docs/trees.json");
 
             map.addSource('WCAN',{
                 "type": "geojson",
